@@ -2,7 +2,15 @@
 import { useState, useEffect } from "react";
 
 export default function App() {
-  const [chapters, setChapters] = useState([]);
+ type Chapter = {
+  title: string;
+  content: string;
+  goal: string;
+  conflict: string;
+  outcome: string;
+};
+
+const [chapters, setChapters] = useState<Chapter[]>([]);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [goal, setGoal] = useState("");
